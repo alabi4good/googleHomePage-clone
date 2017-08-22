@@ -1,0 +1,218 @@
+$black: #000;
+$white: #fff;
+$size: 20px;
+
+@mixin leftbottom{
+    left:0;
+    bottom: 0;
+}
+
+@mixin transform($value) {
+    transform: $value;
+    -webkit-transform: $value;
+    -o-transform: $value;
+    -moz-transform: $value;
+    -ms-transform: $value;
+
+}
+
+
+
+%dflex{
+    display: flex;
+    -webkit-display: flex;
+    -o-display: flex;
+    -moz-display: flex;
+    
+}
+
+%footerFlex{
+   @extend %dflex;
+   align-items: center;
+   flex: 6;
+   margin: 0 10px;
+
+}
+
+ %footerAnchor{
+     color: $black;
+     margin-right: 20px;
+ }
+.top-nav{
+    @extend %dflex;
+    justify-content: flex-end;
+    margin: $size auto;
+
+    .top-nav-item{
+         margin-right: $size;
+        a{
+             color: $black;
+        }
+    }
+    .top-nav-item:nth-child(3){
+        font-size: $size;
+    }
+}
+
+#google{
+    @extend %dflex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: percentage(.5);
+    left: percentage(.5);
+    transform: translate(-50%, -50%);
+    max-width: 600px;
+
+    a, #searchInput, #search-btn{
+        margin-bottom: $size;
+    }
+
+    a img{
+        transform: scale(.8, .8);
+    }
+
+     #searchInput{
+         box-shadow: 2px 2px 2px rgba(255, 255, 255, .8);
+     }
+}
+
+#footer-menu{
+  @extend %dflex;
+  @include leftbottom();
+  align-items: center;
+  background-color: rgba(224, 224, 224, .5);
+  position: absolute;
+  width: percentage(1);
+  min-height: 40px;
+
+  #item1{
+      @extend %footerFlex;
+      justify-content: flex-start;
+
+      a{
+         @extend %footerAnchor;
+      }
+      
+  }
+    #item2{
+      @extend %footerFlex;
+      justify-content: flex-end;
+      
+      a{
+         @extend %footerAnchor;
+      }
+  }
+}
+
+
+.pop-up{
+    margin:  0;
+    padding: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 400px;
+    transform: translate(-50%, -50%);
+    background: lighten(rgba(127, 140, 141,1.0), 45%);
+    border-radius:  5px;
+    z-index: 1;
+    //display: none;
+    transition: all .2s ease-in;
+    animation: show .5s linear;
+    animation-delay: .2s;
+
+    #box{
+        width: percentage(.8);
+        height: percentage(.8);
+        margin:0;
+        padding: 20px;
+        background: lighten(rgba(189, 195, 199,1.0), 20%);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        
+        .page-header{
+            color: rgba(41, 128, 185,.7);
+        }
+    }
+}
+
+input{
+    margin-bottom: 10px;
+}
+.btn-success{
+    background: rgba(241, 196, 15,1.0);
+    border: 1px solid rgba(241, 196, 15,1.0);
+}
+
+
+.errorMsg{
+    min-width: 50%;
+   border-radius: 5px;
+   background:rgba(194, 157, 6, 0.81);
+   padding: 7px;
+   transition: all .35s ease-in;
+   animation: error 1s linear;
+}
+
+@keyframes error{
+    0%{
+        opacity: 0;
+    }
+    30%{
+        opacity: .3;
+    }
+    60%{
+        opacity: .6;
+    }
+    80%{
+        opacity: .8;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+@keyframes show {
+
+    0%{
+       
+        top: percentage(.44);
+    }
+
+    50%{
+       
+        top: percentage(.45);
+    }
+    100%{
+        opacity: 1;
+        top: percentage(.5);
+    }
+
+}
+
+@media (max-width: 568px) {
+    
+    #google{
+        #searchInput{
+          width: 60%;
+       }
+       
+      a img{
+           transform: scale(.6, .6);
+       }
+    }
+  
+    .pop-up{
+        width: 90%;
+    }
+     
+    #footer-menu{
+        flex-direction: column;
+    }
+
+}
