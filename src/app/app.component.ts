@@ -9,7 +9,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 export class AppComponent {
   nav = ['Gmail', 'Images'];
   googleUrl = 'https://www.google.com';
-  googleImg = '../assets/img/google.png';
+  googleImg = 'assets/img/google.png';
   item1 = ['Advertising', 'Business', 'About'];
   item2 = ['Privacy', 'Terms', 'Settings'];
   form;
@@ -18,7 +18,7 @@ export class AppComponent {
 
     constructor() {
       this.form = new FormGroup({
-        email: new FormControl('' , [
+        email: new FormControl('', [
           Validators.required,
           Validators.pattern('[^ @]*@[^ @]*')
         ]),
