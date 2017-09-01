@@ -22,7 +22,7 @@
               
             </div>
 
-            <div class="pop-up" [hidden]="visible">
+            <div class="pop-up" [@loginAnimation]="state">
                 <div id="box">
                     <form class="form-group"
                         [formGroup]="form"
@@ -31,9 +31,11 @@
                         <label for="email-address">Email:</label>
                         <input type="text" class="form-control" name="email" placeholder="me@gmail.com" formControlName="email">
                         <p class="errorMsg" *ngIf="!form.controls['email'].valid && form.controls['email'].touched">Enter a valid email</p>
+                        <br>
                         <label for="passwords">Password:</label>
                         <input type="password" class="form-control" name="password" placeholder="password" formControlName="password">
                         <p class="errorMsg" *ngIf="!form.controls['password'].valid && form.controls['password'].touched">{{errorAlert}}</p>
+                        <br>
                         <input type="submit" class="btn btn-success" [disabled]="!form.valid">
                     </form>
                     

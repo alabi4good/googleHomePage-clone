@@ -119,10 +119,7 @@ $size: 20px;
     background: lighten(rgba(127, 140, 141,1.0), 45%);
     border-radius:  5px;
     z-index: 1;
-    //display: none;
-    transition: all .2s ease-in;
-    animation: show .5s linear;
-    animation-delay: .2s;
+    
 
     #box{
         width: percentage(.8);
@@ -151,7 +148,7 @@ input{
 
 
 .errorMsg{
-    min-width: 50%;
+   display: inline-block;
    border-radius: 5px;
    background:rgba(194, 157, 6, 0.81);
    padding: 7px;
@@ -177,23 +174,6 @@ input{
     }
 }
 
-@keyframes show {
-
-    0%{
-       
-        top: percentage(.44);
-    }
-
-    50%{
-       
-        top: percentage(.45);
-    }
-    100%{
-        opacity: 1;
-        top: percentage(.5);
-    }
-
-}
 
 @media (max-width: 568px) {
     

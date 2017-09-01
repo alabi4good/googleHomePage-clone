@@ -1,10 +1,24 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { trigger, state, style, transition, animate, keyframes } from '@angular/animations';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  animations: [
+    trigger('loginAnimation', [
+
+      state('hide', style({
+        opacity: 0,
+      })),
+
+      state('show', style({
+        opacity: 1,
+      })),
+      transition('hide <=> show', animate('400ms ease-in')),
+    ])
+  ]
 })
 export class AppComponent {
   nav = ['Gmail', 'Images'];
@@ -14,7 +28,7 @@ export class AppComponent {
   item2 = ['Privacy', 'Terms', 'Settings'];
   form;
   errorAlert = 'This field is required';
-  visible = true;
+  state = 'hide';
 
     constructor() {
       this.form = new FormGroup({
@@ -40,6 +54,6 @@ export class AppComponent {
     }
 
     popUp() {
-      this.visible = !this.visible;
+      this.state = this.state === 'hide' ? this.state = 'show' : this.state = 'hide';
     }
 }
