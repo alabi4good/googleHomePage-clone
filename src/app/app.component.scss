@@ -17,7 +17,7 @@ $size: 20px;
 }
 
 
-
+//placeholder selector in scss
 %dflex{
     display: flex;
     -webkit-display: flex;
@@ -39,7 +39,7 @@ $size: 20px;
      margin-right: 20px;
  }
 .top-nav{
-    @extend %dflex;
+    @extend %dflex; //using the placeholder selector
     justify-content: flex-end;
     margin: $size auto;
 

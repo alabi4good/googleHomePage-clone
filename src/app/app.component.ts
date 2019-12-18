@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { trigger, state, style, transition, animate, keyframes } from '@angular/animations';
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -46,8 +47,10 @@ export class AppComponent {
 
 
     // tslint:disable-next-line:use-life-cycle-interface
-    ngOnInit() {}
-
+    ngOnInit() {
+  
+    }
+    
 
     submitForm(user) {
       console.log(user);
@@ -55,5 +58,14 @@ export class AppComponent {
 
     popUp() {
       this.state = this.state === 'hide' ? this.state = 'show' : this.state = 'hide';
+    }
+
+    //hide the log in pop up when you click outside of it
+    onClickOutside(e: Event) {
+      //this is how to explicitly tell angular to get the target elements
+      if((<HTMLElement>e.target).id !== "singIn"){
+        return this.state = 'hide';
+      }
+
     }
 }

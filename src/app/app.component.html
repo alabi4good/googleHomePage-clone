@@ -2,9 +2,9 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="top-nav">
-                        <div class="top-nav-item" *ngFor="let nav of nav"><a href="#">{{nav}}</a></div>
-                        <div class="top-nav-item"><a href="#"><i class="material-icons">view_modules</i></a></div>
-                        <div class="top-nav-item"><button type="button" class="btn btn-primary" style="color:white;" (click)="popUp()">Sign In</button></div>
+                        <div class="top-nav-item" *ngFor="let NAV of nav"><a href="#">{{NAV}}</a></div>
+                        <div class="top-nav-item"><a href="#" tooltip="Google Apps!" placement="bottom" show-delay="500"><i class="material-icons">view_modules</i></a></div>
+                        <div class="top-nav-item"><button id="singIn" type="button" class="btn btn-primary" style="color:white;" (click)="popUp()">Sign In</button></div>
                         
                     </div>
                 </div>        
@@ -22,7 +22,7 @@
               
             </div>
 
-            <div class="pop-up" [@loginAnimation]="state">
+            <div class="pop-up" [@loginAnimation]="state" (clickOutside)="onClickOutside($event)">
                 <div id="box">
                     <form class="form-group"
                         [formGroup]="form"
