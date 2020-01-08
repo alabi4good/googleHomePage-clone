@@ -1,0 +1,119 @@
+#appscontainer{
+    list-style-type: none;
+    position:absolute;
+    padding: 0;
+    margin: 0;
+    top: 70px;
+    right: 70px;
+    width: 350px;
+    height: 400px;
+    overflow-y: scroll;
+    border: 1px solid rgb(129, 129, 124);
+    background-color: white;
+    border-radius: 5px;
+    z-index: 1;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    
+}
+
+/*scroll bar width*/
+#appscontainer::-webkit-scrollbar {
+    width: 6px;
+}
+
+/*scroll bar track*/
+#appscontainer::-webkit-scrollbar-track {
+    //box-shadow: inset 0 0 5px grey; 
+    border-radius: 10px;
+}
+
+/*scroll bar handle*/
+#appscontainer::-webkit-scrollbar-thumb {
+    background: rgb(247, 243, 243); 
+    border-radius: 10px;
+}
+
+
+#appscontainer::-webkit-scrollbar-thumb:hover {
+    background: #b30000; 
+}
+
+.apps{
+    border-radius: 2px;
+    width: 100px;
+    height:100px;
+    margin:5px;
+    padding: 5px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    p{
+     text-align: center;
+     margin-top: 15px;
+    }
+    
+}
+
+
+.apps:hover{
+    background: rgba(247, 243, 243, 0.7);
+    border-radius: 5%;
+}
+.app-link{
+    width: 100%;
+    height: 50%;
+    text-align: center;
+    margin-top: 0;
+
+    .fa-user{
+        color:rgb(140, 140, 140); 
+    }
+    .fa-google{
+        color: rgb(245, 136, 140);
+    }
+
+    .fa-globe{
+        color:rgb(255, 51, 153);
+    }
+    .fa-play-circle{
+        color:red;
+    }
+
+    .fa-address-book{
+        color:rgb(140, 26, 255);
+    }
+
+    .fa-rss-square{
+        color: 	rgb(26, 198, 255);
+    }
+    .fa-envelope-square{
+        color: rgb(255, 26, 26);
+    }
+    .fa-upload{
+        color: red;
+    }
+    .fa-calender{
+        color: rgb(83, 255, 26);
+    }
+    .fa-language{
+        color: rgb(198, 255, 26);
+    }
+    .fa-camera{
+        color: rgb(255, 140, 26);
+    }
+    .fa-shopping-cart{
+        color: 	rgb(180, 221, 60);
+    }
+}
+.fa{
+    font-size: 50px;
+    position: relative;
+    bottom: 6px;
+}

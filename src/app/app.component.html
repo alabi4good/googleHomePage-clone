@@ -2,13 +2,15 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="top-nav">
-                        <div class="top-nav-item" *ngFor="let NAV of nav"><a href="#">{{NAV}}</a></div>
-                        <div class="top-nav-item"><a href="#" tooltip="Google Apps!" placement="bottom" show-delay="500"><i class="material-icons">view_modules</i></a></div>
+                        <div class="top-nav-item" *ngFor="let nav of Nav"><a href="#">{{nav}}</a></div>
+                        <div class="top-nav-item"><a href="#" tooltip="Google Apps!" placement="bottom" show-delay="500" (click)="popUpApps()"><i class="material-icons">view_modules</i></a></div>
                         <div class="top-nav-item"><button id="singIn" type="button" class="btn btn-primary" style="color:white;" (click)="popUp()">Sign In</button></div>
                         
                     </div>
                 </div>        
          
+                <app-google-apps [@loginAnimation]="status"></app-google-apps>
+
             </div> 
             <div class="row">
                 <div id="google">

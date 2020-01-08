@@ -5,13 +5,16 @@ import { HttpModule } from '@angular/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ClickOutsideModule } from 'ng-click-outside';
 import { TooltipModule } from 'ng2-tooltip-directive';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 import { AppComponent } from './app.component';
+import { GoogleAppsComponent } from './google-apps/google-apps.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    GoogleAppsComponent
   ],
   imports: [
     BrowserModule,
@@ -19,7 +22,8 @@ import { AppComponent } from './app.component';
     HttpModule,
     BrowserAnimationsModule,
     ClickOutsideModule,
-    TooltipModule
+    TooltipModule,
+    AngularFontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

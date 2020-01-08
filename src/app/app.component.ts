@@ -22,7 +22,7 @@ import { trigger, state, style, transition, animate, keyframes } from '@angular/
   ]
 })
 export class AppComponent {
-  nav = ['Gmail', 'Images'];
+  Nav = ['Gmail', 'Images'];
   googleUrl = 'https://www.google.com';
   googleImg = 'assets/img/google.png';
   item1 = ['Advertising', 'Business', 'About'];
@@ -30,6 +30,7 @@ export class AppComponent {
   form;
   errorAlert = 'This field is required';
   state = 'hide';
+  status = 'hide';
 
     constructor() {
       this.form = new FormGroup({
@@ -60,6 +61,10 @@ export class AppComponent {
       this.state = this.state === 'hide' ? this.state = 'show' : this.state = 'hide';
     }
 
+    popUpApps() {
+      this.status = this.status === 'hide' ? this.status = 'show' : this.status = 'hide';
+    }
+
     //hide the log in pop up when you click outside of it
     onClickOutside(e: Event) {
       //this is how to explicitly tell angular to get the target elements
@@ -68,4 +73,5 @@ export class AppComponent {
       }
 
     }
+  
 }
